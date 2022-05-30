@@ -1,0 +1,22 @@
+{
+  "name": "adopt-me",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "parcel": "^2.5.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "browserslist":[
+    "last 2 chrome versions"
+
+  ]
+
+}
