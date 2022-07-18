@@ -1,17 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import Pet from "./pet";
+import SearchParams from "./SearchParams";
+
+import { Link, Route, Routes } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+
+import Details from "./Details";
+import ThemeContext from "./ThemeContext";
+
+
 
 const App = () => {
+
+  const theme = useState("darkblue")
   return (
-    <div>
-      <h1>Adopt Me</h1>
-      <Pet name="Luna" animal="dog" breed="Havanese"/>
-      <Pet name="Pepper" animal="Bird" breed="Cocktiel"/>
-      <Pet name="Doink" animal="Cat" breed="Mixed"/>
-
-
-    </div>
+    <ThemeContext.Provider value = {theme}>
+    <BrowserRouter>
+  <header>
+  <Link to="/">Adopt Me!</Link>
+</header>
+  {/* <header>
+  <Link to="/">Adopt Me!</Link>
+</header> */}
+  <Routes>
+    <Route path="/details/:id" element={<Details />} />
+    <Route path="/" element={<SearchParams />} />
+  </Routes>
+</BrowserRouter>
+</ThemeContext.Provider>
   )
 }
 
